@@ -205,5 +205,5 @@ Consider, for example, concepts of fariness, inequality, social structures, marg
 
 
 ```
-Your thoughts...
+Examples of value systems that are embedded in databases are having only one first name and one last name field in user registration forms. In spanish-speaking countries, it is common to have two last names (one from each parent), and most of the time two first names as well -- instead of having a "middle" name. This can lead to problems for a user when trying to register in a system that only allows for one first name and one last name, as their full name may not fit into the provided fields. In my experience, I had issues with healthcare systems for this reason. To access to their website, for security reasons, I had to enter my credentials exactly, but my name was not found in their database because of how middle and last names were handled. 
 ```
