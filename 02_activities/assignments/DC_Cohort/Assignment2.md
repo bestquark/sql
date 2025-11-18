@@ -14,10 +14,10 @@
     * Open a private window in your browser. Copy and paste the link to your pull request into the address bar. Make sure you can see your pull request properly. This helps the technical facilitator and learning support staff review your submission easily.
 
 Checklist:
-- [ ] Create a branch called `assignment-two`.
-- [ ] Ensure that the repository is public.
-- [ ] Review [the PR description guidelines](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md#guidelines-for-pull-request-descriptions) and adhere to them.
-- [ ] Verify that the link is accessible in a private browser window.
+- [x] Create a branch called `assignment-two`.
+- [x] Ensure that the repository is public.
+- [x] Review [the PR description guidelines](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md#guidelines-for-pull-request-descriptions) and adhere to them.
+- [x] Verify that the link is accessible in a private browser window.
 
 If you encounter any difficulties or have questions, please don't hesitate to reach out to our team via our Slack. Our Technical Facilitators and Learning Support staff are here to help you navigate any challenges.
 
@@ -45,8 +45,12 @@ There are several tools online you can use, I'd recommend [Draw.io](https://www.
 
 **HINT:** You do not need to create any data for this prompt. This is a conceptual model only. 
 
+![img](./images/bookstore.drawio.png)
+
 #### Prompt 2
 We want to create employee shifts, splitting up the day into morning and evening. Add this to the ERD.
+
+![img](./images/bookstore2.drawio.png)
 
 #### Prompt 3
 The store wants to keep customer addresses. Propose two architectures for the CUSTOMER_ADDRESS table, one that will retain changes, and another that will overwrite. Which is type 1, which is type 2? 
@@ -54,7 +58,13 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+For the CUSTOMER_ADDRESS table, here are two architectures based on slowly changing dimensions (SCD):
+
+1. **Overwrite Architecture (Type 1)**: This design overwrites existing address data when a change occurs, losing historical information. It's simple and space-efficient but doesn't track changes over time. When an address changes: UPDATE the row directly. History is not retained.
+
+2. **Retain Changes Architecture (Type 2)**: This design inserts a new row for each change, preserving history with effective dates and flags. It's useful for auditing or historical analysis but uses more storage. When an address changes: INSERT a new row with the updated address.
+
+Type 1 is the overwrite method (no history), and Type 2 is the retain changes method (full history).
 ```
 
 ***
@@ -183,5 +193,9 @@ Consider, for example, concepts of labour, bias, LLM proliferation, moderating c
 
 
 ```
-Your thoughts...
+The article "Neural Nets Are Just People All the Way Down" reveals that AI systems rely heavily on human labor, raising ethical concerns about exploitation. Datasets like ImageNet were built by crowdsourced workers on Amazon Mechanical Turk, earning minimal wages for labeling millions of images. This gig economy model hides the tedious, low-paid work behind AI's facade, similar to manual sewing in fashion. Foundational tools like WordNet and the Brown Corpus also depended on academics and students, often uncredited, highlighting issues of fair compensation and recognition in tech's supply chain.
+
+Bias is embedded in these human-curated datasets, perpetuating societal prejudices. ImageNet's categories, derived from WordNet, led to offensive labels exposed by ImageNet Roulette, such as classifying people as "orphan" or "nerd." Such biases amplify discrimination in AI applications like facial recognition, disproportionately affecting marginalized groups. The article emphasizes that every dataset layer is "infused with politics," urging accountability for harmful outputs.
+
+The proliferation of LLMs and content moderation challenges compound these issues, intersecting technology with society. Rapid AI deployment ignores foundational flaws, risking misinformation and inequality. ImageNet's manual fixes for offensive content since 2019 rely on more human labor, creating unsustainable cycles. Ethically, this demands transparency, regulations for data consent, and diverse curation to prevent exploitation and ensure responsible innovation.
 ```
