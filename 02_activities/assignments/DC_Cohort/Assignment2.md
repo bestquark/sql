@@ -57,7 +57,7 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
-```
+> ```
 For the CUSTOMER_ADDRESS table, here are two architectures based on slowly changing dimensions (SCD):
 
 1. **Overwrite Architecture (Type 1)**: This design overwrites existing address data when a change occurs, losing historical information. It's simple and space-efficient but doesn't track changes over time. When an address changes: UPDATE the row directly. History is not retained.
@@ -192,7 +192,7 @@ Read: Boykis, V. (2019, October 16). _Neural nets are just people all the way do
 Consider, for example, concepts of labour, bias, LLM proliferation, moderating content, intersection of technology and society, ect. 
 
 
-```
+> ```
 The article "Neural Nets Are Just People All the Way Down" reveals that AI systems rely heavily on human labor, raising ethical concerns about exploitation. Datasets like ImageNet were built by crowdsourced workers on Amazon Mechanical Turk, earning minimal wages for labeling millions of images. This gig economy model hides the tedious, low-paid work behind AI's facade, similar to manual sewing in fashion. Foundational tools like WordNet and the Brown Corpus also depended on academics and students, often uncredited, highlighting issues of fair compensation and recognition in tech's supply chain.
 
 Bias is embedded in these human-curated datasets, perpetuating societal prejudices. ImageNet's categories, derived from WordNet, led to offensive labels exposed by ImageNet Roulette, such as classifying people as "orphan" or "nerd." Such biases amplify discrimination in AI applications like facial recognition, disproportionately affecting marginalized groups. The article emphasizes that every dataset layer is "infused with politics," urging accountability for harmful outputs.
