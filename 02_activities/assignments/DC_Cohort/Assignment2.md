@@ -45,10 +45,12 @@ There are several tools online you can use, I'd recommend [Draw.io](https://www.
 
 **HINT:** You do not need to create any data for this prompt. This is a conceptual model only. 
 
-![img](./images/bookstore.drawio.png
+![img](./images/bookstore.drawio.png)
 
 #### Prompt 2
 We want to create employee shifts, splitting up the day into morning and evening. Add this to the ERD.
+
+![img](./images/bookstore2.drawio.png)
 
 #### Prompt 3
 The store wants to keep customer addresses. Propose two architectures for the CUSTOMER_ADDRESS table, one that will retain changes, and another that will overwrite. Which is type 1, which is type 2? 
@@ -56,7 +58,13 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+For the CUSTOMER_ADDRESS table, here are two architectures based on slowly changing dimensions (SCD):
+
+1. **Overwrite Architecture (Type 1)**: This design overwrites existing address data when a change occurs, losing historical information. It's simple and space-efficient but doesn't track changes over time. When an address changes: UPDATE the row directly. History is not retained.
+
+2. **Retain Changes Architecture (Type 2)**: This design inserts a new row for each change, preserving history with effective dates and flags. It's useful for auditing or historical analysis but uses more storage. When an address changes: INSERT a new row with the updated address.
+
+Type 1 is the overwrite method (no history), and Type 2 is the retain changes method (full history).
 ```
 
 ***
